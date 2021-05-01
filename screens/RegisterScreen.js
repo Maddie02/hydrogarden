@@ -15,8 +15,13 @@ const RegisterScreen = () => {
 
     const handleRegistration = () => {
         firebase.auth().createUserWithEmailAndPassword(email, password)
-                .then((result) => {
-                    console.log(result);
+                .then(() => {
+                    firebase.firestore().collection("users")
+                            .doc(firebase.auth().currentUser.uid)
+                            .set({
+                                email,
+                                name
+                            })
                 })
                 .catch((error) => {
                     console.log(error);
