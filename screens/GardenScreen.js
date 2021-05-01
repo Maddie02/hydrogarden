@@ -1,11 +1,12 @@
 import React from 'react';
 import { Text, View } from 'react-native';
+import TabsLayout from '../components/TabsLayout';
 
 const GardenScreen = () => {
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <Text> Garden </Text>
-        </View>
+        <TabsLayout header="Градина">
+
+        </TabsLayout>
     )
 }
 
