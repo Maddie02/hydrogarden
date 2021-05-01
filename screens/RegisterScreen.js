@@ -4,6 +4,8 @@ import { KeyboardAvoidingView, StyleSheet, TextInput } from 'react-native';
 import { useState } from 'react';
 import HydroButton from '../components/HydroButton';
 
+import firebase from 'firebase';
+
 const RegisterScreen = () => {
 
     const [email, setEmail] = useState('');
@@ -12,7 +14,13 @@ const RegisterScreen = () => {
 
 
     const handleRegistration = () => {
-        console.log('reg');
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+                .then((result) => {
+                    console.log(result);
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
     }
 
     return (
@@ -34,7 +42,7 @@ const RegisterScreen = () => {
                     placeholder="Парола"
                     secureTextEntry={true}
                     style={styles.input}
-                    onChangeText={(password) => setPhoneNumber(password)}
+                    onChangeText={(password) => setPassword(password)}
                 />
                 <HydroButton title="Регистрирай се" onPress={handleRegistration}/>
             </KeyboardAvoidingView>
