@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import GuestLayout from '../components/GuestLayout';
 
 import firebase from 'firebase';
+import { KeyboardAvoidingView, TextInput, StyleSheet } from 'react-native';
+import HydroButton from '../components/HydroButton';
 
 const LoginScreen = () => {
 
@@ -33,5 +35,14 @@ const LoginScreen = () => {
         </GuestLayout>
     )
 }
+
+const styles = StyleSheet.create({
+    input: {
+        padding: 15,
+        borderBottomWidth: 1,
+        borderBottomColor: '#7C7C7C',
+        marginBottom: 10,
+    },
+})
 
 export default LoginScreen;

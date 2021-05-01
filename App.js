@@ -4,7 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './screens/HomeScreen';
 import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
-import { View, Text, Image } from 'react-native';
+import { View, Image } from 'react-native';
 
 import * as firebase from 'firebase';
 import { 
@@ -17,6 +17,7 @@ import {
   MEASUREMENT_ID
 } from '@env'
 import { useState } from 'react';
+import UserTabs from './components/UserTabs';
 
 const firebaseConfig = {
   apiKey: API_KEY,
@@ -75,10 +76,9 @@ export default function App() {
   }
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center' }}>
-      {/* TODO: Add tabs on bottom */}
-      <Text>User is logged in</Text>
-    </View>
+    <NavigationContainer>
+      <UserTabs />
+    </NavigationContainer>
   )
 
 }
