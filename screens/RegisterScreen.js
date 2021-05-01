@@ -1,23 +1,10 @@
-import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import React from 'react';
+import Auth from '../components/Auth';
 
 const RegisterScreen = () => {
     return (
-        <View style={styles.container}>
-            <Text>
-                Register
-            </Text>
-        </View>
+        <Auth title="Регистрация" />
     )
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#077F7B'
-    }
-})
-
-export default RegisterScreen
+export default RegisterScreen;
