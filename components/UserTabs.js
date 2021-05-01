@@ -7,6 +7,7 @@ import IdeasScreen from '../screens/IdeasScreen';
 import FeedScreen from '../screens/FeedScreen';
 import GardenScreen from '../screens/GardenScreen';
 import Notifications from '../screens/Notifications';
+import AddPostButton from './AddPostButton';
 
 const Tab = createBottomTabNavigator();
 
@@ -15,6 +16,10 @@ const UserTabs = () => {
         <Tab.Navigator
             initialRouteName="Ideas"
             tabBarOptions={{
+                style: {
+                    height: 60,
+                    paddingBottom: 7,
+                },
                 activeTintColor: '#077F7B',
             }}
             >
@@ -22,9 +27,9 @@ const UserTabs = () => {
                 name="Ideas"
                 component={IdeasScreen}
                 options={{
-                    tabBarLabel: 'Ideas',
-                    tabBarIcon: ({ color, size }) => (
-                        <FontAwesome5 name="lightbulb" color={color} size={size} />
+                    tabBarLabel: 'Идеи',
+                    tabBarIcon: ({ color }) => (
+                        <FontAwesome5 name="lightbulb" color={color} size={29} />
                     ),
                 }}
             />
@@ -32,9 +37,18 @@ const UserTabs = () => {
                 name="Garden"
                 component={GardenScreen}
                 options={{
-                    tabBarLabel: 'Garden',
-                    tabBarIcon: ({ color, size }) => (
-                        <MaterialCommunityIcons name="flower-tulip-outline" color={color} size={size} />
+                    tabBarLabel: 'Градина',
+                    tabBarIcon: ({ color }) => (
+                        <MaterialCommunityIcons name="flower-tulip-outline" color={color} size={29} />
+                    ),
+                }}
+            />
+            <Tab.Screen
+                name=" "
+                component={AddPostButton}
+                options={{
+                    tabBarIcon: () => (
+                        <AddPostButton />
                     ),
                 }}
             />
@@ -42,9 +56,9 @@ const UserTabs = () => {
                 name="Feed"
                 component={FeedScreen}
                 options={{
-                tabBarLabel: 'Feed',
-                tabBarIcon: ({ color, size }) => (
-                    <FontAwesome5 name="fire" color={color} size={size} />
+                tabBarLabel: 'Стена',
+                tabBarIcon: ({ color }) => (
+                    <FontAwesome5 name="fire" color={color} size={29} />
                 ),
                 }}
             />
@@ -52,9 +66,9 @@ const UserTabs = () => {
                 name="Notifications"
                 component={Notifications}
                 options={{
-                tabBarLabel: 'Notifications',
-                tabBarIcon: ({ color, size }) => (
-                    <Ionicons name="notifications" color={color} size={size} />
+                tabBarLabel: 'Известия',
+                tabBarIcon: ({ color }) => (
+                    <Ionicons name="notifications" color={color} size={29} />
                 ),
                 }}
             />
