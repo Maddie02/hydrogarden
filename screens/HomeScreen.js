@@ -9,7 +9,7 @@ const HomeScreen = ({ navigation }) => {
       });
 
     if (!loaded) {
-    return null;
+        return null;
     }
     
     return (
