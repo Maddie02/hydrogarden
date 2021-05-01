@@ -1,9 +1,12 @@
 import React from 'react';
-import Auth from '../components/Auth';
+import GuestLayout from '../components/GuestLayout';
+import { Text } from "react-native";
 
 const LoginScreen = () => {
     return (
-        <Auth title="Вход" />
+        <GuestLayout title="Вход">
+            
+        </GuestLayout>
     )
 }
 
