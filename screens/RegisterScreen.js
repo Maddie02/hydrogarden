@@ -9,7 +9,7 @@ import firebase from 'firebase';
 const RegisterScreen = () => {
 
     const [email, setEmail] = useState('');
-    const [phone, setPhoneNumber] = useState('');
+    const [name, setName] = useState('');
     const [password, setPassword] = useState('');
 
 
@@ -34,8 +34,8 @@ const RegisterScreen = () => {
                     style={styles.input}
                 />
                 <TextInput 
-                    placeholder="Телефонен номер"
-                    onChangeText={(number) => setPhoneNumber(number)}
+                    placeholder="Име"
+                    onChangeText={(name) => setName(name)}
                     style={styles.input}
                 />
                 <TextInput 
