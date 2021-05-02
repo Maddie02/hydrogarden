@@ -44,9 +44,10 @@ const UserTabs = () => {
                 }}
             />
             <Tab.Screen
-                name=" "
-                component={AddPostButton}
+                name="Add post"
+                component={IdeasScreen}
                 options={{
+                    tabBarLabel: '',
                     tabBarIcon: () => (
                         <AddPostButton />
                     ),
