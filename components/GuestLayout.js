@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import { useFonts } from 'expo-font';
 
-const Auth = ({ title }) => {
+const GuestLayout = (props) => {
     const [loaded] = useFonts({
         MontserratMedium: require('../assets/fonts/Montserrat-Medium.ttf')
       });
@@ -14,10 +14,10 @@ const Auth = ({ title }) => {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <Text style={styles.welcome}>{title}</Text>
+                <Text style={styles.welcome}>{props.title}</Text>
             </View>
             <View style={styles.form}>
-                
+                {props.children}
             </View>
         </View>
     )
@@ -48,7 +48,8 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 70,
         borderTopRightRadius: 70,
         backgroundColor: '#FFF',
+        padding: 50,
     }
 })
 
-export default Auth;
+export default GuestLayout;
