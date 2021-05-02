@@ -1,8 +1,10 @@
 import { useFonts } from 'expo-font';
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useContext } from 'react'
+import { Button, StyleSheet, Text, View } from 'react-native';
+import UserContext from '../context/UserContext';
 
 const TabsLayout = (props) => {
+    const context = useContext(UserContext);
     const [loaded] = useFonts({
         MontserratMedium: require('../assets/fonts/Montserrat-Medium.ttf')
       });
@@ -15,6 +17,7 @@ const TabsLayout = (props) => {
         <View style={styles.container}>
             <View style={styles.header}>
                 <Text style={styles.headerText}>{props.header}</Text>
+                <Button title="Log out" onPress={() => {context.logout ? context.logout() : null}} />
             </View>
             <View style={styles.body}>
                 {props.children}

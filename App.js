@@ -18,6 +18,8 @@ import {
 } from '@env'
 import { useState } from 'react';
 import UserTabs from './components/UserTabs';
+import UserContext from './context/UserContext';
+import Loading from './components/Loading';
 
 const firebaseConfig = {
   apiKey: API_KEY,
@@ -39,6 +41,13 @@ export default function App() {
 
   const [loaded, setLoaded] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
+  const [user, setUser] = useState(null);
+
+  const login = (user) => {
+    setLoggedIn(true);
+    setLoaded(true);
+    setUser(user);
+  }
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
@@ -46,20 +55,14 @@ export default function App() {
         setLoggedIn(false);
         setLoaded(true);
       } else {
-        setLoggedIn(true);
-        setLoaded(true);
+        login(user);
       }
     })
   }, [])
 
   if (!loaded) {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Image 
-          source={require('./assets/loading_icon.gif')}
-          style={{ width: 100, height: 100 }}
-        />
-      </View>
+      <Loading />
     )
   }
 
@@ -76,9 +79,17 @@ export default function App() {
   }
 
   return (
-    <NavigationContainer>
-      <UserTabs />
-    </NavigationContainer>
+    <UserContext.Provider value={{
+      user,
+      login,
+      logout: () => {
+        firebase.auth().signOut().then(() => console.info('signed out'));
+      }
+    }}>
+      <NavigationContainer>
+        <UserTabs />
+      </NavigationContainer>
+    </UserContext.Provider>
   )
 
 }
