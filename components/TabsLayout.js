@@ -1,7 +1,9 @@
 import { useFonts } from 'expo-font';
 import React, { useContext } from 'react'
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import UserContext from '../context/UserContext';
+import { MaterialCommunityIcons } from '@expo/vector-icons'; 
+
 
 const TabsLayout = (props) => {
     const context = useContext(UserContext);
@@ -17,7 +19,9 @@ const TabsLayout = (props) => {
         <View style={styles.container}>
             <View style={styles.header}>
                 <Text style={styles.headerText}>{props.header}</Text>
-                <Button title="Log out" onPress={() => {context.logout ? context.logout() : null}} />
+                <TouchableOpacity style={styles.logout} onPress={() => {context.logout ? context.logout() : null}}>
+                    <MaterialCommunityIcons name="logout" size={30} color="#035250" />
+                </TouchableOpacity>
             </View>
             <View style={styles.body}>
                 {props.children}
@@ -34,21 +38,26 @@ const styles = StyleSheet.create({
     },
     header: {
         flex: 1,
+        flexDirection: 'row',
         width: '100%',
         backgroundColor: '#077F7B',
         paddingTop: '10%',
         paddingHorizontal: '10%',
-        justifyContent: 'center',
+        alignItems: 'center',
+        justifyContent: 'space-around',
     },
     headerText: {
         color: '#FFF',
         fontSize: 25,
+        width: '90%',
         fontFamily: 'MontserratMedium',
         justifyContent: 'flex-start',
     },
+    logout: {
+        width: '10%'
+    },
     body: {
-        flex: 7,
-        backgroundColor: "#FFF",
+        flex: 7
     }
 })
 

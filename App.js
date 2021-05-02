@@ -82,8 +82,8 @@ export default function App() {
     <UserContext.Provider value={{
       user,
       login,
-      logout: () => {
-        firebase.auth().signOut().then(() => console.info('signed out'));
+      logout: async () => {
+        await firebase.auth().signOut();
       }
     }}>
       <NavigationContainer>
