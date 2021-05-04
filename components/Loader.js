@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, View } from 'react-native';
 
-const Loading = () => {
+const Loader = () => {
     return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <Image 
@@ -12,4 +12,4 @@ const Loading = () => {
     )
 }
 
-export default Loading;
+export default Loader;

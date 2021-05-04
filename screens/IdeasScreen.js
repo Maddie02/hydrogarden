@@ -1,7 +1,6 @@
-import { useFonts } from 'expo-font';
 import React, {useContext} from 'react'
-import { StyleSheet, Text, View } from 'react-native';
-import Loading from '../components/Loading';
+import { StyleSheet, Text } from 'react-native';
+import Loader from '../components/Loader';
 import AppLayout from '../components/AppLayout';
 import UserContext from '../context/UserContext';
 
@@ -17,7 +16,7 @@ const IdeasScreen = () => {
                         
                         
 
-                    : <Loading />
+                    : <Loader />
                 }
             </AppLayout>
         )

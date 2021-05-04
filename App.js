@@ -4,7 +4,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './screens/HomeScreen';
 import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
-import { View, Image } from 'react-native';
 
 import * as firebase from 'firebase';
 import { 
@@ -19,7 +18,7 @@ import {
 import { useState } from 'react';
 import UserTabs from './components/UserTabs';
 import UserContext from './context/UserContext';
-import Loading from './components/Loading';
+import Loader from './components/Loader';
 
 const firebaseConfig = {
   apiKey: API_KEY,
@@ -62,7 +61,7 @@ export default function App() {
 
   if (!loaded) {
     return (
-      <Loading />
+      <Loader />
     )
   }
 
