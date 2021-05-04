@@ -50,11 +50,11 @@ const styles = StyleSheet.create({
         backgroundColor: '#077F7B'
     },
     header: {
-        flex: 1.3,
+        flex: 1.2,
         backgroundColor: '#077F7B',
     },
     home: {
-        flex: 6,
+        flex: 10,
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#FFF',
