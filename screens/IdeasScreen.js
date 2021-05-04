@@ -2,7 +2,7 @@ import { useFonts } from 'expo-font';
 import React, {useContext} from 'react'
 import { StyleSheet, Text, View } from 'react-native';
 import Loading from '../components/Loading';
-import TabsLayout from '../components/TabsLayout';
+import AppLayout from '../components/AppLayout';
 import UserContext from '../context/UserContext';
 
 const IdeasScreen = () => {
@@ -10,7 +10,7 @@ const IdeasScreen = () => {
     const context = useContext(UserContext);
         
         return (
-            <TabsLayout style={styles.container} header="Идеи">
+            <AppLayout style={styles.container} header="Идеи">
                 {
                     context.user ? 
                         <Text>{context.user.email}</Text>
@@ -19,7 +19,7 @@ const IdeasScreen = () => {
 
                     : <Loading />
                 }
-            </TabsLayout>
+            </AppLayout>
         )
 
 

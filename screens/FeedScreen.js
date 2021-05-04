@@ -1,12 +1,12 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import TabsLayout from '../components/TabsLayout';
+import AppLayout from '../components/AppLayout';
 
 const FeedScreen = () => {
     return (
-        <TabsLayout header="Стена">
+        <AppLayout header="Стена">
 
-        </TabsLayout>
+        </AppLayout>
     )
 }
 

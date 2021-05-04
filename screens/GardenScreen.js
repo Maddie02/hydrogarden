@@ -1,12 +1,12 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import TabsLayout from '../components/TabsLayout';
+import AppLayout from '../components/AppLayout';
 
 const GardenScreen = () => {
     return (
-        <TabsLayout header="Градина">
+        <AppLayout header="Градина">
 
-        </TabsLayout>
+        </AppLayout>
     )
 }
 

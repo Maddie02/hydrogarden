@@ -1,6 +1,6 @@
 import { useFonts } from 'expo-font';
 import React, { useContext } from 'react'
-import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import UserContext from '../context/UserContext';
 import { MaterialCommunityIcons } from '@expo/vector-icons'; 
 
