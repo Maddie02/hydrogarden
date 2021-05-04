@@ -34,17 +34,19 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor: '#077F7B',
     },
     header: {
         flex: 1,
         flexDirection: 'row',
         width: '100%',
         backgroundColor: '#077F7B',
-        paddingTop: '10%',
+        paddingTop: '6%',
+        paddingBottom: '2%',
         paddingHorizontal: '10%',
         alignItems: 'center',
-        justifyContent: 'space-around',
+        justifyContent: 'space-around'
     },
     headerText: {
         color: '#FFF',
@@ -57,7 +59,13 @@ const styles = StyleSheet.create({
         width: '10%'
     },
     body: {
-        flex: 7
+        flex: 7,
+        borderTopLeftRadius: 50,
+        borderTopRightRadius: 50,
+        width: '100%',
+        backgroundColor: '#FFF',
+        paddingVertical: 30,
+        paddingHorizontal: 20,
     }
 })
 
