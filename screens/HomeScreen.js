@@ -15,7 +15,8 @@ const HomeScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                
+                <View style={{ ...StyleSheet.absoluteFillObject, backgroundColor: '#FFF'}}></View>
+                <View style={{ flex: 1, backgroundColor: '#077F7B', borderBottomRightRadius: 65 }}></View>
             </View>
             <View style={styles.home}>
                 <Image 
@@ -35,6 +36,8 @@ const HomeScreen = ({ navigation }) => {
 
             </View>
             <View style={styles.footer}>
+                <View style={{ ...StyleSheet.absoluteFillObject, backgroundColor: '#FFF'}}></View>
+                <View style={{ flex: 1, backgroundColor: '#077F7B', borderTopLeftRadius: 65 }}></View>
             </View>
         </View>
     )
@@ -44,9 +47,10 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
+        backgroundColor: '#077F7B'
     },
     header: {
-        flex: 1,
+        flex: 1.3,
         backgroundColor: '#077F7B',
     },
     home: {
@@ -54,21 +58,24 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#FFF',
+        borderTopLeftRadius: 65,
+        borderBottomRightRadius: 65,
     },
     logo: {
         flex: 3,
+        borderRadius: 100,
     },
     footer: {
-        flex: 1,
+        flex: 1.2,
         backgroundColor: '#077F7B',
     },
     homeText: {
-        flex: 1,
         color: '#077F7B',
         paddingLeft: 20,
         paddingRight: 20,
         alignItems: 'center',
         textAlign: 'center',
+        marginBottom: 30,
         fontSize: 18,
         fontFamily: 'MontserratMedium',
     },
